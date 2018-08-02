@@ -18,6 +18,9 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+      <article v-for="post in posts" :key="post.permalink">
+        <h1>{{post.title}}</h1>
+      </article>
     </div>
   </section>
 </template>
@@ -33,7 +36,15 @@ export default {
     script: [
       { src: '/redirect.js', body: true },
     ]
-  }
+  },
+  asyncData: async ({ app, route, payload }) => ({
+    posts: (await app
+      .$content('/posts')
+      .query({ exclude: ['body'] })
+      .getAll()).sort((a, b) => new Date(b.date) - new Date(a.date))
+  })
+};
+</script>
 }
 </script>
 

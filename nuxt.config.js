@@ -12,6 +12,7 @@ module.exports = {
     script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  modules: ['nuxtent'],
   generate: {
     dir: 'public'
   },
@@ -23,19 +24,5 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        });
-      }
-    }
-  }
+  build: {}
 };
