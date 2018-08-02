@@ -6,3 +6,7 @@ tags:
   - Buh
 ---
 And some more test
+
+
+
+![Super](/images/300x300.png)
