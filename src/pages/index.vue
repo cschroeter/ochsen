@@ -21,16 +21,18 @@
       <article v-for="post in posts" :key="post.permalink">
         <h1>{{post.title}}</h1>
       </article>
+      <contact-form />
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   components: {
-    AppLogo
+    AppLogo, ContactForm
   },
   head: {
     script: [
@@ -44,8 +46,6 @@ export default {
       .getAll()).sort((a, b) => new Date(b.date) - new Date(a.date))
   })
 };
-</script>
-}
 </script>
 
 <style>
