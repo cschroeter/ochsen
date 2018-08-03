@@ -45,7 +45,7 @@ module.exports = {
       }
     }
   },
-  plugins: ['~/plugins/vuetify'],
+  plugins: ['~/plugins/vuetify', '~/plugins/vee-validate'],
   /*
   ** Load Vuetify CSS globally
   */
