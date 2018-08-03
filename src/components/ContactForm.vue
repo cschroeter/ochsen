@@ -3,8 +3,12 @@
     ref="form"
     v-model="valid" 
     name="contact" 
-    netlify 
+    data-netlify="true"
     lazy-validation>
+    <input 
+      type="hidden" 
+      name="form-name" 
+      value="contact" >
     <v-text-field
       v-model="name"
       label="Name"
