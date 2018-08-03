@@ -104,11 +104,21 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          // eslint-disable-next-line
-          alert('Form Submitted!');
-          return;
-        }
+            const encode = (data) => {
+              return Object.keys(data)
+                  .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+                  .join("&");
+            }
+          fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: encode({ "form-name": "contact", "name": "Christian", "email": "info@cschroeter.de" })
+                })
+                  .then(() => alert("Success!"))
+                  .catch(error => alert(error));
+        } else {
         alert('Correct them errors!');
+        }
       });
     }
   }
