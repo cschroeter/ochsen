@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   /*
   ** Headers of the page
@@ -10,7 +12,14 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
   modules: ['nuxtent'],
   generate: {
@@ -24,5 +33,21 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {}
+  build: {
+    extractCSS: true,
+    extend(config, ctx) {
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vuetify/]
+          })
+        ];
+      }
+    }
+  },
+  plugins: ['~/plugins/vuetify'],
+  /*
+  ** Load Vuetify CSS globally
+  */
+  css: ['~/assets/app.styl']
 };
