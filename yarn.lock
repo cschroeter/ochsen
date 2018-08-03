@@ -2384,6 +2384,10 @@ foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
 
+form-urlencoded@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/form-urlencoded/-/form-urlencoded-3.0.0.tgz#7f5da60c0a110c333549aacbaf9f7ded65936ea1"
+
 forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
@@ -5848,9 +5852,9 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
-vee-validate@^2.1.0-beta.7:
-  version "2.1.0-beta.7"
-  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.1.0-beta.7.tgz#25f275ad94a69e4b50d939430a459b84f40dbc2a"
+vee-validate@2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.0.9.tgz#948a96572d9e2369d5cb217a84269ecf6c1f9a11"
 
 vendors@^1.0.0:
   version "1.0.2"

@@ -1,7 +1,11 @@
 <template>
 <div>
     <app-logo />
-    <contact-form />
+    <v-card flat>
+       <v-card-text>
+        <contact-form />
+       </v-card-text>
+    </v-card>
 </div>
 </template>
 
