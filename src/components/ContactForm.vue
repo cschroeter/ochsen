@@ -1,38 +1,54 @@
 <template>
-  <v-form 
-    ref="form"
-    v-model="valid" 
-    name="contact" 
-    data-netlify="true"
-    lazy-validation>
-    <input 
-      type="hidden" 
-      name="form-name" 
-      value="contact" >
-    <v-text-field
-      v-model="name"
-      label="Name"
-      required
-    />
-    <v-text-field
-      v-model="email"
-      label="E-mail"
-      required
-    />
-    <v-textarea
-      v-model="message"
-      auto-grow
-      label="Nachricht"
-      rows="1"
-    />
-    <v-btn
-      :disabled="!valid"
-      color="primary"
-      @click="submit"
-    >
-      submit
-    </v-btn>
-  </v-form>
+
+  <div class="container">
+    <h1 class="title">
+      Contact
+    </h1>
+    <div class="content">
+      <form 
+        ref="form"
+        name="contact"
+        data-netlify="true" 
+        method="post"
+        @submit.prevent="onSubmit">
+        <input 
+          type="hidden" 
+          name="form-name" 
+          value="contact" >
+        <label 
+          class="form-label" 
+          for="name">
+          Name:
+        </label>
+        <input 
+          id="name" 
+          class="form-field" 
+          name="name" >
+        <label 
+          class="form-label" 
+          for="email">
+          Email:
+        </label>
+        <input 
+          id="email" 
+          class="form-field" 
+          name="email" >
+        <label 
+          class="form-label" 
+          for="message">
+          Message:
+        </label>
+        <textarea 
+          id="message" 
+          class="form-field" 
+          name="message"/>
+        <input 
+          class="form-button" 
+          type="submit" 
+          value="Send message" >
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -43,13 +59,11 @@ export default {
       email: '',
       message: ''
       }),
-         methods: {
-      submit () {
-        if (this.$refs.form.validate()) {
-          // Native form submission is not yet supported
-         this.$refs.form.submit();
+      methods: {
+        onSubmit() {
+          console.log('onsubmit')
+          return true;
         }
-      },
     }
 }
 </script>
