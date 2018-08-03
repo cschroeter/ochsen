@@ -47,7 +47,7 @@ export default {
       submit () {
         if (this.$refs.form.validate()) {
           // Native form submission is not yet supported
-          console.log('submit post', this.$refs.form.action)
+         this.$refs.form.submit();
         }
       },
     }
