@@ -1,6 +1,8 @@
 <template>
   <form 
-    netlify
+    name="contact" 
+    method="post" 
+    data-netlify="true"
     @submit.prevent="validateBeforeSubmit">
     <div class="column is-12">
       <label class="label">Email</label>
