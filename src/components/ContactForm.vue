@@ -3,8 +3,12 @@
     name="contact" 
     method="post" 
     data-netlify="true"
+    netlify-honeypot="bot-field"
     @submit.prevent="validateBeforeSubmit">
     <div class="column is-12">
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" ></label>
+      </p>
       <label class="label">Email</label>
       <p class="control has-icon has-icon-right">
         <input 
