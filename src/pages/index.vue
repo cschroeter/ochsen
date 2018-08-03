@@ -1,19 +1,17 @@
 <template>
-  <div class="title">
-    <h2>Main content</h2>
+<div>
     <app-logo />
-    <v-btn color="primary">Primary button</v-btn>
-    <v-btn color="secondary">Secondary button</v-btn>
-    <v-btn color="success">Success</v-btn>
-  </div>
+    <contact-form />
+</div>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   components: {
-    AppLogo
+    AppLogo, ContactForm
   },
   head: {
     script: [
