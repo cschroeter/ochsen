@@ -23,6 +23,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Beschreibung", name: "description", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Vorschaubild", name: "thumbnail", widget: "image"}
       - {label: "Bild", name: "image", widghet: "image"}
