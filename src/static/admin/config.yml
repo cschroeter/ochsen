@@ -17,3 +17,12 @@ collections:
       - {label: "Introduction", name: "introduction", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - name: "gallery"
+    label: "Bildergalerie"
+    folder: "src/content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Beschreibung", name: "description", widget: "string"}
+      - {label: "Vorschaubild", name: "thumbnail", widget: "image"}
+      - {label: "Bild", name: "image", widghet: "image"}
