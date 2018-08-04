@@ -20,23 +20,31 @@
         v-validate="'required'"
         v-model="name"
         :error-messages="errors.collect('name')"
+        data-vv-as="Name"
         label="Name"
-        data-vv-name="name"
+        name="name"
         required
       />
       <v-text-field
         v-validate="'required|email'"
         v-model="email"
         :error-messages="errors.collect('email')"
+        data-vv-as="E-Mail"
         label="E-mail"
-        data-vv-name="email"
+        type="email"
+        name="email"
         required
       />
       <v-textarea
+        v-validate="'required'"
         v-model="message"
+        :error-messages="errors.collect('message')"
+        data-vv-as="Nachricht"
         auto-grow
         label="Nachricht"
         rows="1"
+        name="message"
+        required
       />
       <v-btn 
         type="submit" 
