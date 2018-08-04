@@ -1,31 +1,48 @@
 <template>
-  <form
-    novalidate
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    @submit.prevent="validateBeforeSubmit">
-    <v-text-field
-      v-validate="'required'"
-      v-model="name"
-      :error-messages="errors.collect('name')"
-      label="Name"
-      name="name"
-      data-vv-name="name"
-      required
-    />
-    <v-text-field
-      v-validate="'required|email'"
-      v-model="email"
-      :error-messages="errors.collect('email')"
-      label="E-mail"
-      name="email"
-      data-vv-name="email"
-      required
-    />
-    <v-btn 
-      type="submit" 
-      color="primary">Senden</v-btn>
-  </form>
+  <div>
+    <form 
+      name="contact" 
+      netlify 
+      netlify-honeypot="bot-field" 
+      hidden>
+      <input 
+        type="text" 
+        name="name" >
+      <input 
+        type="email" 
+        name="email" >
+      <textarea name="message"/>
+    </form>
+    <form
+      novalidate
+      @submit.prevent="validateBeforeSubmit">
+      <v-text-field
+        v-validate="'required'"
+        v-model="name"
+        :error-messages="errors.collect('name')"
+        label="Name"
+        data-vv-name="name"
+        required
+      />
+      <v-text-field
+        v-validate="'required|email'"
+        v-model="email"
+        :error-messages="errors.collect('email')"
+        label="E-mail"
+        data-vv-name="email"
+        required
+      />
+      <v-textarea
+        v-model="message"
+        auto-grow
+        label="Nachricht"
+        rows="1"
+      />
+      <v-btn 
+        type="submit" 
+        color="primary">Senden</v-btn>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -36,7 +53,8 @@ export default {
   data() {
     return {
       name: '',
-      email: ''
+      email: '',
+      message: ''
     }
   },
   methods: {
