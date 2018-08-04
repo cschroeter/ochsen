@@ -9,6 +9,7 @@
       v-model="name"
       :error-messages="errors.collect('name')"
       label="Name"
+      name="name"
       data-vv-name="name"
       required
     />
@@ -17,6 +18,7 @@
       v-model="email"
       :error-messages="errors.collect('email')"
       label="E-mail"
+      name="email"
       data-vv-name="email"
       required
     />
